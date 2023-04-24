@@ -1,0 +1,63 @@
+@use '../../dirs/variables';
+
+.logo {
+    width: fit-content;
+
+    &.dark{
+        h1, svg{
+            color: #000;
+        }
+    }
+
+    &.light{
+        h1, svg{
+            color: #fff;
+        }
+    }
+
+    &.blueish{
+        h1{
+            span:first-child{
+
+                color: variables.$primary-color;
+            }
+        }
+    }
+
+    h1 {
+        display: flex;
+        flex-direction: column;
+        line-height: 0.8em;
+        max-width: 200px;
+        width: 100%;
+        font-size: 2em;
+
+        span {
+            display: flex;
+            gap: 0.1em;
+            align-items: center;
+            transition: 0.3s ease-in-out;
+        }
+
+        span:first-child {
+            transform: rotate(0) translate(0);
+            color: variables.$secondary-color;
+        }
+
+        span:last-child {
+            transform: translateX(15px);
+            z-index: 2;
+        }
+
+        &:hover {
+            span:first-child {
+                transform: rotate(10deg) translate(10px, 5px);
+            }
+
+            span:last-child {
+                transform: translateX(15px);
+                z-index: 2;
+            }
+        }
+    }
+}

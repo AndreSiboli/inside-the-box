@@ -1,0 +1,81 @@
+@use '../../../dirs/variables';
+@use '../../../dirs/mixins';
+
+.dropdown {
+    position: relative;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        > p {
+            span:last-child {
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        .dropdown_child_container {
+            visibility: visible;
+            height: 90px;
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    > p {
+        @include mixins.flexCenter;
+        gap: 0.3em;
+
+        span:first-child {
+            svg {
+                margin-right: 0.1em;
+            }
+        }
+
+        span:last-child {
+            display: flex;
+
+            svg {
+                transition: 0.3s ease-in-out;
+            }
+        }
+    }
+
+    &_child_container {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 1.2em;
+        right: 0;
+        padding-top: 0.4em;
+        pointer-events: none;
+        height: 0px;
+        overflow: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    &_child {
+        @include mixins.flexAlign(flex-start);
+        flex-direction: column;
+        gap: 0.5em;
+
+        padding: 1em;
+        width: 120px;
+        height: 100%;
+        height: fit-content;
+
+        background-color: variables.$secondary_color;
+        border-radius: 0.4em;
+
+        &_link {
+            width: 100%;
+            a {
+                :first-child {
+                    @include mixins.flexJustify(flex-start);
+                    gap: 0.3em;
+                }
+            }
+        }
+    }
+}

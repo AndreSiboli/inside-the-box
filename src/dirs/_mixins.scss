@@ -1,0 +1,22 @@
+@mixin flexCenter {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+@mixin flexJustify($justify: center) {
+    display: flex;
+    justify-content: $justify; 
+    align-items: center;
+}
+
+@mixin flexAlign($align: center) {
+    display: flex;
+    justify-content: center; 
+    align-items: $align;
+}
+
+@mixin maxWidth($max) {
+    max-width: $max;
+    width: 100%;
+}

@@ -1,0 +1,16 @@
+@use "../../../dirs/variables";
+@use "../../../dirs/mixins";
+
+.linkButton{
+    @include mixins.flexCenter;
+    background-color: variables.$secondary-color;
+    padding: .5em .8em;
+    border-radius: .3em;
+    transition: .3s ease-in-out;
+    width: 100%;
+    height: 100%;
+
+    &:hover{
+        background-color: #061A40;
+    }
+}
