@@ -71,7 +71,6 @@ export default function Login() {
 
         if (signupRet.logErr) {
             //do something
-            console.log(signupRet.logErr);
             return;
         }
         if (signupRet.redirect) Navigator('/login');

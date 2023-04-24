@@ -19,8 +19,8 @@ interface VerifyQuestTypes {
     category: string | undefined;
 }
 
-const url = 'http://localhost:7568';
-//https://insidethebox-server.onrender.com
+const url = 'https://insidethebox-server.onrender.com';
+//http://localhost:7568
 
 export const interceptor = () => {
     axios.interceptors.response.use(
@@ -61,7 +61,7 @@ export async function sendLogin(user: LoginTypes) {
             return ret;
         })
         .catch((err) => {
-            console.log(err);
+            return false
         });
 
     return data;
@@ -81,7 +81,8 @@ export async function sendSignup(user: SignupTypes) {
             return ret;
         })
         .catch((err) => {
-            console.log(err);
+            console.log("Não foi possivel se registrar");
+            return false
         });
 
     return data;
@@ -161,6 +162,7 @@ export async function logout() {
         })
         .catch((err) => {
             console.log('Ocorreu um erro ao sair.');
+            return false;
         });
 
     return ret;
@@ -174,12 +176,11 @@ export async function verifyToken() {
         .post(`${url}/login/verify-refresh`, {token})
         .then((ret) => {
             const { data } = ret;
-            console.log(data, 'requests')
             if (data.result) return true;
             return false;
         })
         .catch((err) => {
-            console.log(err);
+            console.log('Token inválido');
             return false;
         });
     return data;

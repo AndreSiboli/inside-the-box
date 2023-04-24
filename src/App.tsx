@@ -12,8 +12,7 @@ function App() {
 
     useEffect(() => {
         async function firstLoad() {
-            const ret = await verifyToken();
-            console.log(ret);
+            const ret = await verifyToken();;
             if (!ret) Navigator('/logout');
         }
 

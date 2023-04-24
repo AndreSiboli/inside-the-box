@@ -35,35 +35,11 @@ export function AuthProvider({ children }: any) {
         const json = JSON.parse(localUser);
         setUser(json);
     }, []);
-
-    async function signIn() {
-        const data = await fetch('https://insidethebox-server.onrender.com/login/auth', {
-            method: 'GET',
-            credentials: 'include',
-        })
-            .then((res) => res.json())
-            .then(({ response }: UserTypes) => {
-                console.log(response)
-                if (!response) return false;
-                const resString = JSON.stringify(response)
-                localStorage.setItem('@Auth:user', resString);
-                
-                const resJson = JSON.parse(resString)
-                setUser(resJson);
-                return true;
-            })
-            .catch((err) => {
-                return false;
-            });
-
-        return data;
-    }
-
+   
     return (
         <AuthContext.Provider
             value={{
                 user,
-                signIn,
                 setUser,
             }}
         >

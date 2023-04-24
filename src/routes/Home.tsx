@@ -115,6 +115,8 @@ export default function Home() {
                                     Então, junte-se a nós nesta jornada de diversão e conhecimento.
                                     Desafie-se e veja até onde você pode chegar pensando{' '}
                                     <span>Inside the Box</span>.
+                                    <br /> <br />
+                                    Site ainda em construção!
                                 </p>
                             </div>
                             <div className={styles.about_content_image}>
@@ -152,10 +154,16 @@ export default function Home() {
                                 </p>
                                 <div className={styles.creator_button}>
                                     <div className={styles.creator_button_container}>
-                                        <LinkButton to="https://andresiboli.github.io/portifolio" text="Portifólio" />
+                                        <LinkButton
+                                            to="https://andresiboli.github.io/portifolio"
+                                            text="Portifólio"
+                                        />
                                     </div>
                                     <div className={styles.creator_button_container}>
-                                        <LinkButton to="https://github.com/AndreSiboli" text="Github" />
+                                        <LinkButton
+                                            to="https://github.com/AndreSiboli"
+                                            text="Github"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +171,7 @@ export default function Home() {
                     </div>
                 </Container>
             </section>
-            <Footer/>
+            <Footer />
         </>
     );
 }

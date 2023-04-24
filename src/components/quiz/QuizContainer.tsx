@@ -43,8 +43,7 @@ export default function QuizContainer({ dataQuest, handlePoints }: PropTypes) {
 
         setTimeout(async () => {
             const ret = await verifyAnswer(answer);
-            console.log(ret, 'verify');
-            if (ret.err) console.log(ret.err);
+            if (ret.err) return;
             if (dataQuest) setIsVerifying(false);
             if (!ret.response) return handlePoints(false);
             handlePoints(true);
