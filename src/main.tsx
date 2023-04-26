@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import './index.scss';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, createHashRouter } from 'react-router-dom';
 
 //------------------------------------- Routes -------------------------------------
 import App from './App';
@@ -17,7 +17,7 @@ import { logout } from './utils/requests';
 
 //------------------------------------- Config -------------------------------------
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         // path: '/insidethebox',
         element: <App />,
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
                     localStorage.removeItem('@Auth:user');
                     localStorage.removeItem('@Auth:token');
                     localStorage.removeItem('@Auth:refresh_token');
-                    location.replace('/login');
+                    location.replace('/');
 
                     return null;
                 },

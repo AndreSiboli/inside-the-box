@@ -50,7 +50,6 @@ export default function Navbar() {
 
     useEffect(()=>{
         const url = '/';
-        console.log(pathname)
         if (pathname === url && hash) {
             const getEl = document.querySelector(hash);
             if (!getEl) return;
