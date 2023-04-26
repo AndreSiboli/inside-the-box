@@ -19,8 +19,8 @@ interface VerifyQuestTypes {
     category: string | undefined;
 }
 
-const url = 'https://insidethebox-server.onrender.com';
-//http://localhost:7568
+const url = 'http://localhost:7568';
+//https://insidethebox-server.onrender.com
 
 export const interceptor = () => {
     axios.interceptors.response.use(

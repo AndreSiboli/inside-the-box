@@ -6,7 +6,7 @@
     align-items: center;
     flex-direction: column;
     gap: 3em;
-    background-color: #061A40;
+    background-color: variables.$primary_color;
     padding: 2em;
     border-radius: 0.8em;
     max-width: 800px;
@@ -20,7 +20,7 @@
     }
 
     .question_container {
-        background-color: #f0f8ff; //#f0f8ff
+        background-color: #f0f8ff;
         border-radius: 0.5em;
         padding: .5em .8em;
         font-size: 1.5em;
@@ -37,7 +37,6 @@
 
 @media screen and (max-width: 768px) {
     .quiz_container{
-        margin-top: 2.5em;
         .question_wrapper {
             display: grid;
             grid-template-columns: repeat(1, 1fr);

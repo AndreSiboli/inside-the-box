@@ -126,7 +126,7 @@ export default function Home() {
                     </div>
                 </Container>
             </section>
-            <section className={styles.creator}>
+            <section className={styles.creator} id="creator">
                 <Container>
                     <div className={styles.creator_container}>
                         <div className={styles.creator_title}>
